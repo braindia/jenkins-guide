@@ -9,13 +9,13 @@ pipeline {
       parallel {
         stage('Express Image') {
           steps {
-            sh 'docker build -f express-image/Dockerfile \
+            sh 'docker build -f express-image/dockerfile \
             -t nodeapp-dev:trunk .'
           }
         }
         stage('Test-Unit Image') {
           steps {
-            sh 'docker build -f test-image/Dockerfile \
+            sh 'docker build -f test-image/dockerfile \
             -t test-image:latest .'
           }
         }
